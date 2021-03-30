@@ -27,4 +27,4 @@ jobs:
       - name: 'Signin'
         env:
           COOKIE: ${{ secrets.COOKIE }}
-        run: python checkin.py
+        run: python check1.py
