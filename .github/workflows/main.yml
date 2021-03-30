@@ -1,4 +1,4 @@
-name: 'Xiaomimall Auto Signin'
+name: 'checkin'
 
 on:
   workflow_dispatch:
@@ -22,4 +22,9 @@ jobs:
 
       - name: 'Install dependencies'
         run: |
-          python -m pip install --upgrade
+          python -m pip install --upgrade requests
+          python -m pip install --upgrade beautifulsoup4
+      - name: 'Signin'
+        env:
+          COOKIE: ${{ secrets.COOKIE }}
+        run: python checkin.py
