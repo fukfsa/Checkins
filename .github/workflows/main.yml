@@ -1,0 +1,25 @@
+name: 'Xiaomimall Auto Signin'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '49 16 * * *'
+
+jobs:
+  auto_signin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v2
+
+      - name: 'Set python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+
+      - name: 'Install dependencies'
+        run: |
+          python -m pip install --upgrade
