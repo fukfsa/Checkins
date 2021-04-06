@@ -39,5 +39,5 @@ def login():
     res = requests.post(url=url, headers=headers)
 
 if __name__ == '__main__':
-    main()
+    login()
     pass
